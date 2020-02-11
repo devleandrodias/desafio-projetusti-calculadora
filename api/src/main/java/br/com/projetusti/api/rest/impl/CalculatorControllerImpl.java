@@ -46,28 +46,28 @@ public class CalculatorControllerImpl implements CalculatorController {
   @Override
   @ApiOperation(value = "Calculate multiplication value 1 and value 2")
   @GetMapping(path = "/protected/multiplication/{value1}/{value2}")
-  public ResponseEntity<?> calculateMultiplication(double value1, double value2) {
+  public ResponseEntity<?> calculateMultiplication(@PathVariable double value1, @PathVariable double value2) {
     return new ResponseEntity<>(service.calculateMultiplication(value1, value2), HttpStatus.OK);
   }
 
   @Override
   @ApiOperation(value = "Calculate division value 1 and value 2")
   @GetMapping(path = "/protected/division/{value1}/{value2}")
-  public ResponseEntity<?> calculateDivision(double value1, double value2) {
+  public ResponseEntity<?> calculateDivision(@PathVariable double value1, @PathVariable double value2) {
     return new ResponseEntity<>(service.calculateDivision(value1, value2), HttpStatus.OK);
   }
 
   @Override
   @ApiOperation(value = "Calculate exponentiation value 1 with exponent")
   @GetMapping(path = "/protected/exponentiation/{value1}/{exponent}")
-  public ResponseEntity<?> calculateExponentiation(double value, int exponent) {
+  public ResponseEntity<?> calculateExponentiation(@PathVariable double value, @PathVariable int exponent) {
     return new ResponseEntity<>(service.calculateExponentiation(value, exponent), HttpStatus.OK);
   }
 
   @Override
   @ApiOperation(value = "Calculate radication of value")
   @GetMapping(path = "/protected/radication/{value}")
-  public ResponseEntity<?> calculateRadication(double value) {
+  public ResponseEntity<?> calculateRadication(@PathVariable double value) {
     return new ResponseEntity<>(service.calculateRadication(value), HttpStatus.OK);
   }
 }
