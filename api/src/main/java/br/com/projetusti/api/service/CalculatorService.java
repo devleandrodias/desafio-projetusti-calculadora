@@ -18,7 +18,7 @@ public interface CalculatorService {
 
   CalculatorDto calculateDivision(double value1, double value2);
 
-  CalculatorDto calculateExponentiation(double value1, double value2);
+  CalculatorDto calculateExponentiation(double value, int exponent);
 
   CalculatorDto calculateRadication(double value);
 }

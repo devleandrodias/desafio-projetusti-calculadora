@@ -18,7 +18,7 @@ public interface CalculatorController {
 
   ResponseEntity<?> calculateDivision(double value1, double value2);
 
-  ResponseEntity<?> calculateExponentiation(double value1, double value2);
+  ResponseEntity<?> calculateExponentiation(double value, int exponent);
 
   ResponseEntity<?> calculateRadication(double value);
 }

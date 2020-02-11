@@ -77,13 +77,13 @@ public class CalculatorServiceImpl implements CalculatorService {
   }
 
   @Override
-  public CalculatorDto calculateExponentiation(double value1, double value2) {
+  public CalculatorDto calculateExponentiation(double value, int exponent) {
     CalculatorDto dto = new CalculatorDto();
 
-    double result = Math.pow(value1, value2);
+    double result = Math.pow(value, exponent);
 
-    dto.setValue1(value1);
-    dto.setValue2(value2);
+    dto.setValue1(value);
+    dto.setValue2(exponent);
     dto.setResult(result);
     dto.setOperation("Exponentiation");
 
