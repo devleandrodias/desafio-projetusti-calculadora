@@ -25,9 +25,38 @@ public class CalculatorControllerImpl implements CalculatorController {
   CalculatorServiceImpl service;
 
   @Override
-  @GetMapping(path = "/protected/calculate/{value1}/{value2}/{operation}")
-  public ResponseEntity<?> calculate(@PathVariable("value1") double value1, @PathVariable("value2") double value2,
-      @PathVariable("operation") int operation) {
-    return null;
+  @GetMapping(path = "/protected/sum/{value1}/{value2}")
+  public ResponseEntity<?> calculateSum(@PathVariable double value1, @PathVariable double value2) {
+    return new ResponseEntity<>(service.calculateSum(value1, value2), HttpStatus.OK);
+  }
+
+  @Override
+  @GetMapping(path = "/protected/subtraction/{value1}/{value2}")
+  public ResponseEntity<?> calculateSubtraction(@PathVariable double value1, @PathVariable double value2) {
+    return new ResponseEntity<>(service.calculateSubtraction(value1, value2), HttpStatus.OK);
+  }
+
+  @Override
+  @GetMapping(path = "/protected/multiplication/{value1}/{value2}")
+  public ResponseEntity<?> calculateMultiplication(double value1, double value2) {
+    return new ResponseEntity<>(service.calculateMultiplication(value1, value2), HttpStatus.OK);
+  }
+
+  @Override
+  @GetMapping(path = "/protected/division/{value1}/{value2}")
+  public ResponseEntity<?> calculateDivision(double value1, double value2) {
+    return new ResponseEntity<>(service.calculateDivision(value1, value2), HttpStatus.OK);
+  }
+
+  @Override
+  @GetMapping(path = "/protected/exponentiation/{value1}/{value2}")
+  public ResponseEntity<?> calculateExponentiation(double value1, double value2) {
+    return new ResponseEntity<>(service.calculateExponentiation(value1, value2), HttpStatus.OK);
+  }
+
+  @Override
+  @GetMapping(path = "/protected/radication/{value}")
+  public ResponseEntity<?> calculateRadication(double value) {
+    return new ResponseEntity<>(service.calculateRadication(value), HttpStatus.OK);
   }
 }

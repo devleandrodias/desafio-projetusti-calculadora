@@ -10,5 +10,15 @@ import org.springframework.http.ResponseEntity;
  */
 
 public interface CalculatorController {
-  ResponseEntity<?> calculate(double value1, double value2, int operation);
+  ResponseEntity<?> calculateSum(double value1, double value2);
+
+  ResponseEntity<?> calculateSubtraction(double value1, double value2);
+
+  ResponseEntity<?> calculateMultiplication(double value1, double value2);
+
+  ResponseEntity<?> calculateDivision(double value1, double value2);
+
+  ResponseEntity<?> calculateExponentiation(double value1, double value2);
+
+  ResponseEntity<?> calculateRadication(double value);
 }
