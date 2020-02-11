@@ -1,9 +1,11 @@
 package br.com.projetusti.api.service;
 
+import br.com.projetusti.api.model.dto.CalculatorDto;
+
 /**
  * CalculatorService
  */
 public interface CalculatorService {
 
-  void calculate();
+  CalculatorDto calculate(double value1, double value2, int operation);
 }

@@ -10,5 +10,5 @@ import org.springframework.http.ResponseEntity;
  */
 
 public interface CalculatorController {
-  ResponseEntity<?> calculate(double value1, double value2);
+  ResponseEntity<?> calculate(double value1, double value2, int operation);
 }
