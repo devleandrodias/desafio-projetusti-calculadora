@@ -60,12 +60,18 @@ public class CalculatorServiceImpl implements CalculatorService {
   public CalculatorDto calculateDivision(double value1, double value2) {
     CalculatorDto dto = new CalculatorDto();
 
-    double result = value1 / value2;
-
     dto.setValue1(value1);
     dto.setValue2(value2);
-    dto.setResult(result);
-    dto.setOperation("Division");
+
+    if (value2 != 0) {
+      double result = value1 / value2;
+      dto.setResult(result);
+      dto.setOperation("Division");
+
+    } else {
+      dto.setResult(0);
+      dto.setOperation("Zero division is not possible");
+    }
 
     return dto;
   }
