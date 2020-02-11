@@ -59,7 +59,7 @@ public class CalculatorControllerImpl implements CalculatorController {
 
   @Override
   @ApiOperation(value = "Calculate exponentiation value 1 with exponent")
-  @GetMapping(path = "/protected/exponentiation/{value1}/{exponent}")
+  @GetMapping(path = "/protected/exponentiation/{value}/{exponent}")
   public ResponseEntity<?> calculateExponentiation(@PathVariable double value, @PathVariable int exponent) {
     return new ResponseEntity<>(service.calculateExponentiation(value, exponent), HttpStatus.OK);
   }
