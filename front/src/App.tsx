@@ -1,6 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Calculator from "./components/Calculator";
+import Global from "./style/global";
 
-export default function App() {
-  return <Calculator />;
-}
+const App: React.FC = () => (
+  <Fragment>
+    <Global />
+    <Calculator />
+  </Fragment>
+);
+
+export default App;
