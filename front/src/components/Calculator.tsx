@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { FaCalculator } from "react-icons/fa";
 import {
   Container,
   Input,
@@ -6,7 +7,10 @@ import {
   Selected,
   Button,
   Form,
-  Option
+  Option,
+  Wrapper,
+  Title,
+  Group
 } from "./style";
 
 // interface ICalculator {
@@ -20,23 +24,39 @@ const Calculator: React.FC = () => {
 
   return (
     <Fragment>
-      <Container>
-        <Form>
-          <Input type="number" />
-          <Selected name="operations">
-            <Option value={1}>+</Option>
-            <Option value={1}>+</Option>
-            <Option value={1}>+</Option>
-            <Option value={1}>+</Option>
-            <Option value={1}>+</Option>
-            <Option value={1}>+</Option>
-          </Selected>
-          <Input type="number" />
-          <Button type="submit">Calcular</Button>
-        </Form>
-        <Label htmlFor="result">Resultado</Label>
-        <Input type="number" name="result" disabled />
-      </Container>
+      <Wrapper>
+        <Container>
+          <Title>
+            <FaCalculator color="#fff" fontSize="75px" />
+          </Title>
+          <Form>
+            <Group>
+              <Label>Primeiro Valor</Label>
+              <Input type="number" />
+            </Group>
+            <Group>
+              <Label>Segundo Valor</Label>
+              <Input type="number" />
+            </Group>
+            <Group>
+              <Label>Operação</Label>
+              <Selected name="operations">
+                <Option value={1}>+</Option>
+                <Option value={1}>-</Option>
+                <Option value={1}>*</Option>
+                <Option value={1}>/</Option>
+                <Option value={1}>√</Option>
+                <Option value={1}>^</Option>
+              </Selected>
+            </Group>
+            <Button type="submit">Calcular</Button>
+          </Form>
+          <Group style={{ marginTop: "25px" }}>
+            <Label htmlFor="result">Resultado</Label>
+            <Input type="number" name="result" disabled />
+          </Group>
+        </Container>
+      </Wrapper>
     </Fragment>
   );
 };

@@ -1,8 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
-   
+ @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
   * { 
     margin: 0;
     padding: 0;
@@ -22,9 +22,11 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body, input, button {
-    font-size: 14px;
-    font-family: 'roboto', sans-serif;
+  body, input, label {
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    text-align: left;
   }
   
   a {
@@ -37,5 +39,14 @@ export default createGlobalStyle`
   
   button {
     cursor: pointer;
+  }
+
+  input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;  
+  }
+
+  input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
   }
 `;
