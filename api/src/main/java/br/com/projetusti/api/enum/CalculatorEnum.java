@@ -1,6 +1,0 @@
-/**
- * CalculatorEnum
- */
-public enum CalculatorEnum {
-
-}

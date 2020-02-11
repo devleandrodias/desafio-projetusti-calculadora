@@ -1,11 +1,24 @@
 package br.com.projetusti.api.service;
 
-import br.com.projetusti.api.model.dto.CalculatorDto;
+import br.com.projetusti.api.dto.CalculatorDto;
 
 /**
- * CalculatorService
+ * Interfaces de contrato da camada de serviço.
+ *
+ * @author Leandro Dias
+ * @since 10/02/2020
  */
 public interface CalculatorService {
 
-  CalculatorDto calculate(double value1, double value2, int operation);
+  CalculatorDto calculateSum(double value1, double value2);
+
+  CalculatorDto calculateSubtraction(double value1, double value2);
+
+  CalculatorDto calculateMultiplication(double value1, double value2);
+
+  CalculatorDto calculateDivision(double value1, double value2);
+
+  CalculatorDto calculateExponentiation(double value1, double value2);
+
+  CalculatorDto calculateRadication(double value);
 }

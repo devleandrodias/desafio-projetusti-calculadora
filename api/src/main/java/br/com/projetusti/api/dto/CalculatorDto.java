@@ -1,4 +1,4 @@
-package br.com.projetusti.api.model.dto;
+package br.com.projetusti.api.dto;
 
 import lombok.Data;
 

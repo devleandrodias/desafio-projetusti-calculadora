@@ -2,51 +2,98 @@ package br.com.projetusti.api.service.impl;
 
 import org.springframework.stereotype.Service;
 
-import br.com.projetusti.api.model.dto.CalculatorDto;
+import br.com.projetusti.api.dto.CalculatorDto;
 import br.com.projetusti.api.service.CalculatorService;
 
 /**
- * CalculatorServiceImpl
+ * Implementação das interfaces da camada de serviço.
+ *
+ * @author Leandro Dias
+ * @since 10/02/2020
  */
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
 
   @Override
-  public CalculatorDto calculate(double value1, double value2, int operation) {
+  public CalculatorDto calculateSum(double value1, double value2) {
     CalculatorDto dto = new CalculatorDto();
+
+    double result = value1 + value2;
 
     dto.setValue1(value1);
     dto.setValue2(value2);
+    dto.setResult(result);
+    dto.setOperation("Sum");
 
-    switch (operation) {
-    case 1:
-      dto.setResult(calculateSum(value1, value2));
-      dto.setOperation("Sum");
-      return dto;
-    case 2:
-      // Subtração
-      break;
-    case 3:
-      // Multiplicação
-      break;
-    case 4:
-      // Divisão
-      break;
-    case 5:
-      // Exponeciação
-      break;
-    case 6:
-      // Radiciação
-      break;
-    default:
-      // Operação Inválida
-      break;
-    }
+    return dto;
+  };
+
+  @Override
+  public CalculatorDto calculateSubtraction(double value1, double value2) {
+    CalculatorDto dto = new CalculatorDto();
+
+    double result = value1 - value2;
+
+    dto.setValue1(value1);
+    dto.setValue2(value2);
+    dto.setResult(result);
+    dto.setOperation("Subtraction");
+
+    return dto;
+  };
+
+  @Override
+  public CalculatorDto calculateMultiplication(double value1, double value2) {
+    CalculatorDto dto = new CalculatorDto();
+
+    double result = value1 * value2;
+
+    dto.setValue1(value1);
+    dto.setValue2(value2);
+    dto.setResult(result);
+    dto.setOperation("Multiplication");
 
     return dto;
   }
 
-  private double calculateSum(double value1, double value2) {
-    return value1 + value2;
-  };
+  @Override
+  public CalculatorDto calculateDivision(double value1, double value2) {
+    CalculatorDto dto = new CalculatorDto();
+
+    double result = value1 / value2;
+
+    dto.setValue1(value1);
+    dto.setValue2(value2);
+    dto.setResult(result);
+    dto.setOperation("Division");
+
+    return dto;
+  }
+
+  @Override
+  public CalculatorDto calculateExponentiation(double value1, double value2) {
+    CalculatorDto dto = new CalculatorDto();
+
+    double result = Math.pow(value1, value2);
+
+    dto.setValue1(value1);
+    dto.setValue2(value2);
+    dto.setResult(result);
+    dto.setOperation("Exponentiation");
+
+    return dto;
+  }
+
+  @Override
+  public CalculatorDto calculateRadication(double value) {
+    CalculatorDto dto = new CalculatorDto();
+
+    double result = Math.sqrt(value);
+
+    dto.setValue1(value);
+    dto.setResult(result);
+    dto.setOperation("Radication");
+
+    return dto;
+  }
 }

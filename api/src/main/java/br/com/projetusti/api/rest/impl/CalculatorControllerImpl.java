@@ -28,6 +28,6 @@ public class CalculatorControllerImpl implements CalculatorController {
   @GetMapping(path = "/protected/calculate/{value1}/{value2}/{operation}")
   public ResponseEntity<?> calculate(@PathVariable("value1") double value1, @PathVariable("value2") double value2,
       @PathVariable("operation") int operation) {
-    return new ResponseEntity<>(service.calculate(value1, value2, operation), HttpStatus.OK);
+    return null;
   }
 }
